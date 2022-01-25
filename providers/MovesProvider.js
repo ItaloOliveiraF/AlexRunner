@@ -8,6 +8,10 @@ function keyPressed(){
     if(gameOver && keyCode == SPACE) {
         newGame();
     }
+
+    if(tela=='help' && keyCode == ESCAPE){
+        tela = 'menu'
+    }
 }
 
 function mouseClicked(){
@@ -28,4 +32,5 @@ function mouseClicked(){
             tela = 'help'
         }
     }
+
 }

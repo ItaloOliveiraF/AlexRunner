@@ -45,6 +45,8 @@ function draw() {
     drawMenu();
   } else if (tela == 'play'){
     playGame(); 
+  } else if(tela == 'help'){
+    instructions();
   }
 }
 
@@ -114,4 +116,16 @@ function die(){
     record = pontuation;
     window.localStorage.setItem('my-record', record);
   }
+}
+
+function instructions(){
+  fill('#A31A15');
+  textSize(18);
+  text("Ajude Alex a ser o melhor corredor da floresta!", 20, 128 );
+  text("Salte por cima de inimigos e obstáculos", 40, 128 +sizePx +20);
+  text("e ganho pontos por chegar longe.", 65, 128 + sizePx+40);
+  text("Comandos:", camera.position.x - 120, 128 + sizePx*2 + 40);
+  text("Pular [SPACE]", camera.position.x , 128 + sizePx*2+40);
+  fill('#E9E9E9');
+  text("Aperte ESC para voltar ao menu",80, 400);
 }
