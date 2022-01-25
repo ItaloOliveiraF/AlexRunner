@@ -1,9 +1,12 @@
 function keyPressed(){
     const SPACE = 32
-    if(keyCode === SPACE && tela === 'play' && !gameOver) {
+    if(keyCode == SPACE && tela == 'play' && !gameOver) {
         if(hero.velocity.y == 0){
             hero.velocity.y =  -15;
         }
+    }
+    if(gameOver && keyCode == SPACE) {
+        newGame();
     }
 }
 

@@ -81,9 +81,12 @@ function playGame(){
     if(gameOver){
       changeSound('gameOver', false);
 
-      fill(255);
+      fill('#A31A15');
       textSize(36);
       text("Game Over", camera.position.x - 100, 128);
+
+      textSize(18);
+      text("Jogue novamente [SPACE]", camera.position.x - 120, 128 + sizePx);
     }
 
     ground.draw()
@@ -93,9 +96,12 @@ function playGame(){
 }
 
 function newGame(){
-  ground.draw()
-  drawEnemies();
-  drawSprite(hero);
+  hero = createHero(heroX, heroY);
+  ground.restart();
+  enemiesGroup.removeSprites();
+  pontuation = 0;
+  
+  gameOver = false;
 }
 
 function die(){
